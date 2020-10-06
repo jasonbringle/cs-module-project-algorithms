@@ -3,9 +3,27 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
-    # Your code here
-
-    pass
+    total = 0
+    final = []
+    i = 0
+    j = 0
+    for i in range(len(arr)):
+        j = 0
+        final.append(total)
+        total = 0
+        while j in range(len(arr)):
+            if total >= 1:
+                if j != i :
+                    total *= arr[j]
+                    j += 1
+                else:
+                    j += 1
+            else:
+                total += 1
+    final.append(total)
+    final.pop(0)
+    return final
+    
 
 
 if __name__ == '__main__':
